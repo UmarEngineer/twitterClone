@@ -1,38 +1,145 @@
-.App {
-  text-align: center;
+
+.home-navbar{
+    position: fixed;
+    height: 50px;
+    bottom: -2px;
+    right: 0;
+    left: 0;
+    z-index: 99;
+    display: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.home-tweetBtn{
+    display: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@media screen and (max-width: 1280px) {
+    .sideLinkSpan{
+        display: none;
+    }
+    .sidebar{
+        max-width: 152px;
+        width: 100%;
+        /* justify-content: flex-end; */
+        align-items: flex-end;
+    }
+
+    .sidebar-button{
+        width: 50px;
+        height: 50px;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .sidebar-svg{
+        display: block;
+    }
+    .sidebar-tweetText{
+        display: none;
+    }
+    .sidebar-list{
+        width: 50px;
+    }
+
+    .userbox-text{
+        display: none;
+    }
+
+    .widgets{
+        width: 360px;
+    }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@media screen and (max-width:1024px) {
+    .widgets{
+        display: none;
+    }
+
+    .content{
+        flex-grow: auto;
+        width: 566px;
+    }
 }
 
-.App-link {
-  color: #61dafb;
+@media screen and (max-width:768px) {
+    .tweetbox-icons{
+        transform: scale(0.8);
+        margin-left: -40px;
+    }
+
+    .tweetbox-button{
+        margin-right: -60px;
+    }
+
+    .sidebar{
+        max-width: 100px;
+    }
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@media screen and (max-width:600px) {
+    .sidebar{
+        max-width: 70px;
+    }
+
+    .userbox{
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    
+}
+@media screen and (max-width:500px) {
+    .sidebar{
+        display: none;
+    }
+    
+    .home-text{
+        font-weight: 500;
+    }
+    
+    .home-userImg{
+        display: inline-block;
+    }
+    .content-userImg{
+        display: none;
+    }
+    .home-navbar{
+        display: flex;
+    }
+    .home-tweetBtn{
+        display: flex;
+        position: fixed;
+        right: 15px;
+        bottom: 65px;
+        width: 60px;
+        height: 60px;
+        z-index: 99;
+        /* background-color: white; */
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .feedItem-list{
+        transform: scale(0.8);
+        margin-left: -30px;
+    }
+
+    .feedItem-img{
+        transform: scale(0.8);
+        margin-left: -30px;
+        margin-top: -20px;
+        margin-bottom: -20px;
+    }
+}
+
+@media screen and (max-width: 330px) {
+    .home-icon{
+        margin-left: 20px;
+    }
+    .mess-icon{
+        margin-right: 20px;
+    }
+
 }
