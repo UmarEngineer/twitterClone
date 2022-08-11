@@ -1,23 +1,27 @@
-import firebase from "firebase";
+// import firebase from 'firebase/compat/app';
+import { serverTimestamp } from "firebase/firestore";
 import { useState } from "react"
 import { EmojiIcon, GIFIcon, ImageIcon, PollIcon, ScheduleIcon } from "../icons/icon"
 import db from "../firebase";
+// import { collection, orderBy, onSnapshot } from "firebase/firestore"; 
 
-const TweetBox = () => {
+
+const TweetBox = ({handleFocus, handleBlur}) => {
 
     const [content, setContent] = useState("");
     
-    const sendTweet = () => {
+
+
+    const sendTweet = (e) => {
         if (content !== "") {
           db.collection("feed").add({
             displayName: "Umar Muhandis",
             username: "@khojimirzayev",
             content,
-            timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+            timestamp: serverTimestamp(),
             avatar:
             'https://pbs.twimg.com/profile_images/1555566387493568515/CDk80R9Q_400x400.jpg'
-          });
-    
+        });
           setContent("");
         }
       };
@@ -30,6 +34,8 @@ const TweetBox = () => {
                 spellCheck='false'
                 onChange={e => setContent(e.target.value)}
                 value={content}
+                onFocus={handleFocus}
+                onBlur={handleBlur}
             />
 
             <div className="flex items-center justify-between tweetbox-icons">

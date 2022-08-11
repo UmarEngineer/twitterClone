@@ -14,7 +14,9 @@ let sana = timestamp?.toDate().toLocaleTimeString("tr-TR")
 let nuq = '..'
 
 if(window.screen.availWidth <= 360){
-  sana = sana.slice(0,5) + nuq
+  if(sana){
+    sana = sana.slice(0,5) + nuq
+  }
   username = username.slice(0,5) + nuq
   if(displayName.length >= 10){
     displayName = displayName.slice(0,10) + nuq
@@ -24,8 +26,9 @@ if(window.screen.availWidth <= 360){
 const [numReply, setNumReply] = useState(parseInt(Math.random() * 100))
 const [numReTweet, setNumReTweet] = useState(parseInt(Math.random() * 100))
 const [numLike, setNumLike] = useState(parseInt(Math.random() * 100))
+
   return (
-    <article className="flex space-x-3 border-b border-gray-extraLight px-4 py-3 cursor-pointer">
+    <article className="flex space-x-3 border-b border-gray-extraLight px-4 py-3 cursor-pointer" >
       <img src={avatar} alt="Profile" className="w-11 h-11 rounded-full" />
       <div className="flex-1">
         <div className="flex items-center justify-between text-sm">
