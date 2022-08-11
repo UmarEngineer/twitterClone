@@ -17,8 +17,10 @@ const Content = () =>{
     }
 
     const handleBlur = () => {
-        document.querySelector('.home-navbar').style.display = 'flex';
-        document.querySelector('.home-tweetBtn').style.display = 'flex';
+        if(window.screen.availWidth <= 500){
+            document.querySelector('.home-navbar').style.display = 'flex';
+            document.querySelector('.home-tweetBtn').style.display = 'flex';
+        }
     }
 
     const mobileShow = () => {
